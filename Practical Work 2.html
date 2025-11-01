@@ -1,0 +1,291 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8" /> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+<title>POLITEKNIK KUCHING SARAWAK</title> 
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<!-- Your CSS (after Bootstrap so it can override) --> 
+  <link rel="stylesheet" href="styles/styles.css"/>
+  <style>
+    body {
+    background-color: #f3e8ff; 
+    color:black;
+   
+    }
+
+.image-row {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .image-row label {
+      width: 150px;
+    }
+    .image-row small {
+      color: #666;
+      font-size: 12px;
+    }
+    #preview {
+      width: 100px;
+      height: 100px;
+      border: 1px solid #ccc;
+      object-fit: cover;
+      display: none;
+    }
+
+  h1{font-family: 'Merriweather', serif;
+      }
+
+      h2{font-family: 'Merriweather', serif;
+      }
+
+     input.form-control, 
+select.form-select {
+  border: 2px solid #555; 
+  box-shadow: none;
+  border-radius: 6px; 
+}
+
+input.form-control:focus, 
+select.form-select:focus {
+  border: 3px solid #333; 
+  outline: none;
+  box-shadow: 0 0 5px rgba(85, 85, 85, 0.4);
+}
+input[type="radio"] {accent-color: #007bff; 
+}
+
+  </style>
+
+</head>
+<body class="container mt-4">
+  <h1 class="mb-3  text-center"><b>Politeknik Kuching Sarawak</b></h1>
+  <h2 class="mb-3 text-center">Student Registration Form</h2><br>
+
+  <form id="regForm"  class="needs-validation" novalidate>
+
+<div class="row mb-3">
+  <label for="studentImage" class="col-sm-2 col-form-label">Student Image (max 5MB)</label>
+  <div class="col-sm-10 text-center d-flex flex-column align-items-center">
+    <input type="file" class="form-control mb-3" id="studentImage" accept="image/*" style="max-width: 300px;" required>
+    <img id="preview" alt="Preview will appear here" class="img-preview">
+    <div class="invalid-feedback">Please upload a student image.</div>
+  </div>
+</div>
+    
+    
+      <div class="row mb-3">
+      <label for="StudentName" class="col-sm-2 col-form-label">Student Name</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" placeholder="Student name" aria-label="Student name" onchange="toUpperCase(this)" required>
+    <div class="invalid-feedback">Please enter student name.
+  </div>
+</div>
+</div>
+
+
+<div class="row mb-3">
+    <label for="FatherName" class="col-sm-2 col-form-label">Father Name</label>
+    <div class="col-sm-10">
+     <input type="text" class="form-control" placeholder="Father name" aria-label="Father name" onchange="toUpperCase(this)" required>
+     <div class="invalid-feedback">Please enter father name.
+  </div>
+</div>
+</div>
+
+<div class="row mb-3">
+    <label for="MotherName" class="col-sm-2 col-form-label">Mother Name</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" placeholder="Mother name" aria-label="Mother name" onchange="toUpperCase(this)" required>
+    <div class="invalid-feedback">Please enter mother name.
+  </div>
+</div>
+</div>
+
+
+
+<div class="row mb-3">
+        <label class="col-sm-2 col-form-label" for="gridRadios2">Gender</label><br>
+        <div class="col-sm-10">
+          <div class="form-check form-check-inline">
+        <input type="radio" name="gender" id="genderMale" value="Male" required>
+        <label class="form-check-label" for="genderMale">Male</label>
+      </div>
+        <div class="form-check form-check-inline">
+        <input type="radio" name="gender" id="genderFemale" value="Female" required>
+        <label class="form-check-label" for="genderFemale">Female</label>
+      </div>
+        <div class="invalid-feedback gender-feedback" style="display:none;">Please select your gender.</div>
+    </div>
+  </div>
+
+   
+  <div class="row mb-3">
+    <label for="DateBirth" class="col-sm-2 col-form-label">Date Birth</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" placeholder="DateBirth" aria-label="Date Birth" required>
+    <div class="invalid-feedback ">Please enter date of birth.</div>
+</div>
+</div>
+
+
+
+      <div class="row mb-3">
+    <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <div class="input-group has-validation">
+      <span class="input-group-text" id="inputEmail3">@</span>
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email Address" onfocus="highlight(this)" onblur="removeHighlight(this)" required>
+      <div class="invalid-feedback">Please enter a valid email address.
+
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+  <div class="row mb-3">
+     <label for="Level" class="col-sm-2 col-form-label">Level</label>
+     <div class="col-sm-10">
+    <select class="form-select" id="Level" required>
+      <option selected disabled value="">--Select Level--</option>
+      <option value="1">Diploma</option>
+      <option value="2">Degree</option>
+      <option value="3">Master</option>
+    </select>
+    <div class="invalid-feedback">Please select a level.</div>
+</div>
+</div>
+
+
+
+<div class="row mb-3">
+     <label for="Deparment" class="col-sm-2 col-form-label">Department</label>
+     <div class="col-sm-10">
+    <select class="form-select" id="Department" required>
+      <option selected disabled value="">--Select Deparment--</option>
+      <option value="1">Software Engineering</option>
+      <option value="2">Data Science</option>
+      <option value="3">Networking Engineering</option>
+    </select>
+    <div class="invalid-feedback">Please select a deparment.</div>
+</div>
+</div>
+
+   
+ <div class="row mb-3">
+    <label for="Phonenumber" class="col-sm-2 col-form-label">Phone Number</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" placeholder="Phone Number" aria-label="Phone Number" required>
+    <div class="invalid-feedback">Please enter your phone number.
+
+  </div>
+</div>
+
+      <hr style="border: 2px solid #6a1b9a; width: 60%; margin: 20px auto;">
+    <h2 class="pt-2 border-top text-center mt-4">Address</h2><br>
+
+
+     <div class="row mb-3">
+    <label for="State" class="col-sm-2 col-form-label">State</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" placeholder="State" aria-label="State" required >
+    <div class="invalid-feedback">Please enter your state.
+
+  </div>
+</div>
+</div>
+
+ <div class="row mb-3">
+    <label for="City" class="col-sm-2 col-form-label">City</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" placeholder="City" aria-label="City" required>
+    <div class="invalid-feedback">Please enter your city.
+
+  </div>
+</div>
+</div>
+
+<div class="row mb-3">
+    <label for="Postcode" class="col-sm-2 col-form-label">Postcode</label>
+    <div class="col-sm-10">
+    <input type="text" class="form-control" placeholder="Postcode" aria-label="Postcode" required>
+    <div class="invalid-feedback">Please enter your postcode.
+  </div>
+</div>
+</div>
+
+
+<div class="col-12 text-center">
+  <button class="btn btn-primary" type="button" onclick="register()">Register</button>
+  <button class="btn btn-secondary" type="button" onclick="resetForm()">Reset</button>
+</div>
+
+<p id="message"></p>
+<script>
+  const studentImage = document.getElementById('studentImage');
+  const preview = document.getElementById('preview');
+  const form = document.getElementById('regForm');
+
+  // preview gambar
+  studentImage.addEventListener('change', function() {
+    const file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        preview.style.display = 'block';
+        preview.src = e.target.result;
+      }
+      reader.readAsDataURL(file);
+    }
+  });
+
+
+  
+  function resetForm() {
+    form.reset();
+    form.classList.remove('was-validated');
+    preview.style.display = 'none';
+    preview.src = '';
+  }
+
+
+  function register() {
+    const genderRadios = document.querySelectorAll('input[name="gender"]');
+    const genderValid = Array.from(genderRadios).some(radio => radio.checked);
+    const genderFeedback = document.querySelector('.invalid-feedback.gender-feedback');
+
+    if (!genderValid) {
+      genderFeedback.style.display = 'block';
+    } else {
+      genderFeedback.style.display = 'none';
+    }
+
+   
+    if (!form.checkValidity() || !genderValid) {
+      form.classList.add('was-validated');
+      return; 
+    }
+
+    alert("✅ Your details have been saved!");
+    resetForm();
+  }
+
+
+
+</script>
+  
+</body>
+</html>
+
+
+
+
+
+
